@@ -9,3 +9,5 @@ pub mod garden;
 
 // 注意这个 mod 需要 pub 才能被外部使用
 pub mod test;
+
+pub mod example;

@@ -9,4 +9,6 @@ fn main() {
     lib::garden::get_vegetablees();
 
     lib::test::set_test();
+
+    lib::example::get_element();
 }
