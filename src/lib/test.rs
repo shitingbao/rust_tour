@@ -1,1 +1,3 @@
-pub fn set_test() {}
+pub fn set_test() {
+    println!("this is test")
+}
