@@ -10,5 +10,5 @@ fn main() {
 
     lib::test::set_test();
 
-    lib::example::get_element();
+    lib::example::vec::example_vec()
 }
