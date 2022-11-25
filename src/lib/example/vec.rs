@@ -13,10 +13,14 @@ pub fn example_vec() {
 
     println!("{:?}", res);
 
-    let vecs = vec![12, 14, 15, 67];
+    let mut vecs = vec![12, 14, 15, 67];
     let data = &vecs[0];
     println!("data:{:?}", data);
 
     let vdata = vecs.get(2);
     println!("three:{:?}", vdata);
+
+    for da in &mut vecs {
+        println!("{da}")
+    }
 }

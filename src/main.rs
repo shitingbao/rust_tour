@@ -1,6 +1,8 @@
 // use crate::garden::vegetables::Asparagus;
 
-pub mod lib;
+pub mod lib; // 下级包，有 mod 声明
+
+mod core; // 同级别引用
 
 fn main() {
     lib::client::mysql::connect_mysql();
@@ -10,5 +12,7 @@ fn main() {
 
     lib::test::set_test();
 
-    lib::example::vec::example_vec()
+    lib::example::vec::example_vec();
+
+    core::get_cors();
 }
