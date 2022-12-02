@@ -10,9 +10,9 @@ fn main() {
 
     lib::garden::get_vegetablees();
 
-    lib::test::set_test();
-
     lib::example::vec::example_vec();
 
     core::get_cors();
+
+    lib::test::set_test();
 }
