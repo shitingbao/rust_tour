@@ -1,4 +1,4 @@
-use crate::lib::test::set_test2;
+use crate::lib::test;
 
 pub mod canl;
 pub mod tomato;
@@ -8,5 +8,5 @@ pub fn get_vegetablees() {
     println!("get vegetables");
 
     // 同级别的引用
-    set_test2();
+    test::set_test2();
 }

@@ -24,10 +24,12 @@ pub fn test_map() {
 }
 
 pub fn test_list() {
+    let mut mp = HashMap::new();
     let test = String::from("a a bb cd ");
-    let list = test.split(" ");
-    println!("{test}t");
-    for item in list {
+    for item in test.split_whitespace() {
         println!("val:{item}");
+        let count = mp.entry(item).or_insert(0);
+        *count += 1
     }
+    println!("{:?}", mp)
 }

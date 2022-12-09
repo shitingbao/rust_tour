@@ -1,4 +1,5 @@
 pub mod map;
+pub mod panic;
 pub mod string;
 pub mod vec;
 
@@ -6,7 +7,8 @@ pub fn example_load() {
     get_all_ele();
     get_element();
     get_string();
-    map::map_load()
+    map::map_load();
+    panic::panic_load();
 }
 
 fn get_all_ele() -> (i32, String) {
