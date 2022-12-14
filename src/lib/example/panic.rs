@@ -3,6 +3,6 @@ pub fn panic_load() {
 }
 
 fn test_test() {
-    panic!("into panic");
+    // panic!("into panic");
     // println!("this is panic")
 }

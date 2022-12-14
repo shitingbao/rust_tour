@@ -1,3 +1,4 @@
+pub mod file;
 pub mod map;
 pub mod panic;
 pub mod string;
@@ -9,6 +10,7 @@ pub fn example_load() {
     get_string();
     map::map_load();
     panic::panic_load();
+    file::load();
 }
 
 fn get_all_ele() -> (i32, String) {
