@@ -1,8 +1,12 @@
-use std::{fs::File, io::ErrorKind};
+use std::{
+    fs::File,
+    io::{ErrorKind, Write},
+};
 
 pub fn load() {
-    open_file();
-    open_file_result();
+    // open_file();
+    // open_file_result();
+    open_file_opera();
 }
 
 fn open_file() {
@@ -13,10 +17,10 @@ fn open_file() {
         Err(error) => match error.kind() {
             ErrorKind::NotFound => match File::create("./aa.txt") {
                 Ok(file) => file,
-                Err(err) => panic!("{err}"),
+                Err(err) => panic!("create err{:?}", err),
             },
             other_error => {
-                panic!("{other_error}")
+                panic!("err:{:?}", other_error)
             }
         },
     };
@@ -33,4 +37,8 @@ fn open_file_result() {
             panic!("open file error");
         }
     });
+}
+
+fn open_file_opera() {
+    let f = File::open("cc.txt").expect("open cc err");
 }
