@@ -2,6 +2,7 @@ pub mod file;
 pub mod map;
 pub mod panic;
 pub mod string;
+pub mod traits;
 pub mod vec;
 
 pub fn example_load() {
@@ -11,6 +12,7 @@ pub fn example_load() {
     map::map_load();
     panic::panic_load();
     file::load();
+    traits::load();
 }
 
 fn get_all_ele() -> (i32, String) {
