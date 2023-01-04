@@ -7,7 +7,7 @@ pub fn load() {
     let d = Dog {
         name: String::from("dog"),
     };
-    // d.live();
+    d.live();
 
     let t = Tree {
         name: String::from("this is tree"),
@@ -20,10 +20,14 @@ pub fn load() {
     set_plant(&g);
     two_args_unsample(&t, &g);
     two_args_sample(&g, &g);
-    // unsame_type(&g);
-    // unsame_type_t(&g);
-    // unsame_type_args(&t, &g);
-    // let res = unsame_type_where(&t, &g);
+
+    let test = TestTrait {
+        name: String::from(""),
+    };
+    unsame_type(&test);
+    unsame_type_t(&test);
+    unsame_type_args(&test, &test);
+    let res = unsame_type_where(&test, &test);
     // res.live();
 }
 
@@ -105,7 +109,19 @@ fn two_args_sample<T: Plant>(arg1: &T, arg2: &T) {
     arg2.bear();
 }
 
+pub struct TestTrait {
+    pub name: String,
+}
+
+impl Plant for TestTrait {
+    fn grew(&self) {
+        println!("test_trait grew:{}", &self.name)
+    }
+}
+impl Animal for TestTrait {}
+
 // 不同类型的约束边界
+// arg 必须同时实现 Plant 和 Animal
 fn unsame_type(arg: &(impl Plant + Animal)) {
     arg.live()
 }
@@ -114,19 +130,21 @@ fn unsame_type_t<T: Plant + Animal>(arg: &T) {
     arg.bear()
 }
 
-fn unsame_type_args<T: Plant + Animal, U: Plant + Animal>(t: T, u: U) {
+fn unsame_type_args<T: Plant + Animal, U: Plant + Animal>(t: &T, u: &U) {
     t.bear();
     u.bear();
 }
 
 // 定义多个类型，并反馈一个接口
-fn unsame_type_where<T, U>() -> impl Animal
+fn unsame_type_where<T, U>(t: &T, u: &U) -> impl Animal
 where
     T: Plant + Animal,
     U: Plant + Animal,
 {
+    t.bear();
+    u.bear();
     println!("lots of type");
     Dog {
-        name: String::from(""),
+        name: String::from("I am dog"),
     }
 }
