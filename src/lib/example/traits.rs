@@ -28,7 +28,7 @@ pub fn load() {
     unsame_type_t(&test);
     unsame_type_args(&test, &test);
     let res = unsame_type_where(&test, &test);
-    // res.live();
+    res.live();
 }
 
 // 定义一个接口
