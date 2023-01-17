@@ -148,3 +148,20 @@ where
         name: String::from("I am dog"),
     }
 }
+
+struct Pig {
+    weigth: i32,
+    name: String,
+}
+
+impl Pig {
+    pub fn say(&self) {
+        print!("{:?}", &self.name)
+    }
+
+    pub fn com(&self) -> Result<i64, String> {
+        println!("{:?}", &self.weigth);
+
+        Ok(1)
+    }
+}

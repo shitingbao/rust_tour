@@ -55,7 +55,7 @@ fn open_file_opera() -> Result<String, io::Error> {
 }
 
 fn read_from_file() -> Result<String, io::Error> {
-    let mut f = File::open("./aa.txt")?;
+    let mut f = File::open("./cc.txt")?;
     let mut username = String::new();
     f.read_to_string(&mut username)?;
     Ok(username)
